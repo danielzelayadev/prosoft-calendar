@@ -6,7 +6,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 70px;
 }
 
 .form-group {
@@ -24,5 +23,10 @@
 }
 
 .form, .calendar-area {
+    padding-top: 70px;
     width: 50%;
+}
+
+.calendar-area {
+    overflow: auto;
 }
