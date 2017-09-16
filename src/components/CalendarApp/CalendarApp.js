@@ -2,6 +2,8 @@ import React, { Component } from "react";
 
 import styles from './CalendarApp.css';
 
+import Calendar from '../Calendar';
+
 class CalendarApp extends Component {
   constructor() {
     super();
@@ -42,7 +44,9 @@ class CalendarApp extends Component {
             <input type="text" placeholder="US" value={countryCode} onChange={onCountryCodeChange.bind(this)}/>
           </div>
         </div>
-        <div className={styles["calendar-area"]}>Calendar Area</div>
+        <div className={styles["calendar-area"]}>
+          <Calendar startDate={startDate} dayCount={dayCount} countryCode={countryCode} />
+        </div>
       </div>
     );
   }
