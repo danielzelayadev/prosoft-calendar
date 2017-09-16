@@ -1,7 +1,5 @@
 .root {
     display: flex;
-}
-
-.root > h3 {
-    margin-right: 40px;
+    justify-content: space-between;
+    width: 50%;
 }

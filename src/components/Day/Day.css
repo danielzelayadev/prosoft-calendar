@@ -1,6 +1,8 @@
 .root {
+    display: flex;
     width: 14.3%;
     height: 40px;
-    text-align: center;
+    justify-content: center;
+    align-items: center;
     border: 1px solid #fff;
 }
