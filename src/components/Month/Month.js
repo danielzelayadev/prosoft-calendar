@@ -29,17 +29,19 @@ function renderWeeks(startDate, dayCount) {
   const endDay = endDate.day();
   const endWeek = Math.floor((dayCount+startDay) / 7);
 
+  let currStartDate = startDate.date();
   let currStartDay = startDay;
   let currWeek = 0;
   let weeks = [];
 
   while (currWeek != endWeek) {
-      weeks = [ ...weeks, <Week key={currWeek} startDay={currStartDay} /> ];
+      weeks = [ ...weeks, <Week key={currWeek} startDay={currStartDay} startDate={currStartDate} /> ];
+      currStartDate += (7 - currStartDay);
       currStartDay = 0;
       currWeek++;
   }
 
-  weeks = [ ...weeks, <Week key={currWeek} startDay={currStartDay} dayCount={endDay-currStartDay} /> ];
+  weeks = [ ...weeks, <Week key={currWeek} startDay={currStartDay} dayCount={endDay-currStartDay} startDate={currStartDate} /> ];
 
   return weeks;
 }
