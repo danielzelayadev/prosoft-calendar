@@ -9,9 +9,9 @@ class CalendarApp extends Component {
     super();
 
     this.state = {
-      startDate: "",
-      dayCount: 1,
-      countryCode: ""
+      startDate: "08/15/08",
+      dayCount: 30,
+      countryCode: "US"
     };
   }
   onStartDateChange(e) {

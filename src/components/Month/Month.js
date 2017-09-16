@@ -6,6 +6,8 @@ import Week from '../Week';
 
 import { getLastDateOfMonth } from '../../helpers';
 
+import styles from './Month.css';
+
 const months = [
   "January",
   "February",
@@ -46,9 +48,11 @@ const Month = ({ startDate, dayCount = getLastDateOfMonth(startDate) - startDate
   if (dayCount <= 0) return null;
 
   return (
-    <div>
+    <div className={styles.root}>
       <MonthHeader month={months[startDate.month()]} year={startDate.year()} />
-      {renderWeeks(startDate, dayCount)}
+      <div className={styles["week-area"]}>
+        {renderWeeks(startDate, dayCount)}
+      </div>
     </div>
   );
 };
