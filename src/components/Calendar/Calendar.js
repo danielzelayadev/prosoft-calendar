@@ -10,14 +10,15 @@ function renderMonths(startDate, dayCount, countryCode) {
   const endDate = startDate.clone().add(dayCount, 'days');
   let currDate = startDate.clone();
   let months = [];
+  let key = 0;
 
   while (currDate.month() != endDate.month() || currDate.year() != endDate.year()) {
-      months = [ ...months, <Month startDate={currDate} /> ];
+      months = [ ...months, <Month key={key++} startDate={currDate.clone()} /> ];
       currDate.date(1);
       currDate.add(1, 'month');
   }
 
-  months = [ ...months, <Month startDate={currDate} dayCount={endDate.date() - currDate.date()} /> ];
+  months = [ ...months, <Month key={key} startDate={currDate.clone()} dayCount={endDate.date() - currDate.date()} /> ];
 
   return months;
 }
