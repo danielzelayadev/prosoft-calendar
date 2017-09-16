@@ -41,7 +41,11 @@ function renderWeeks(startDate, dayCount) {
       currWeek++;
   }
 
-  weeks = [ ...weeks, <Week key={currWeek} startDay={currStartDay} dayCount={endDay-currStartDay} startDate={currStartDate} /> ];
+  weeks = [ ...weeks, <Week
+    key={currWeek} 
+    startDay={currStartDay}
+    dayCount={endDay-currStartDay}
+    startDate={currStartDate} /> ];
 
   return weeks;
 }
